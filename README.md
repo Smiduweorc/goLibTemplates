@@ -48,11 +48,14 @@ the new version so pkg.go.dev indexes it straight away. Push the tag with
 
 ## Releases
 
-Commit messages must follow [Conventional Commits][cc]; the commit-msg hook
-rejects anything else. `make release` runs lint, govulncheck and the tests,
+Commit messages must follow [Conventional Commits][cc]. They are checked by
+[conventionalcommit/commitlint][ccl], a Go port of commitlint pinned as a
+`tool` directive in `go.mod` and configured in `.commitlint.yaml`. The
+commit-msg hook runs it, and CI runs it over every commit in a pull request. `make release` runs lint, govulncheck and the tests,
 regenerates `CHANGELOG.md`, commits and tags. The tag is the version: Go has
 no manifest to bump. For `v2` and later, the module path must end in `/v2`
 ([Go modules: v2 and beyond](https://go.dev/blog/v2-go-modules)).
 
 [bga]: https://github.com/Smiduweorc/black-garden-ants#readme
 [cc]: https://www.conventionalcommits.org
+[ccl]: https://github.com/conventionalcommit/commitlint
