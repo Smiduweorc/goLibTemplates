@@ -64,3 +64,5 @@ no manifest to bump. For `v2` and later, the module path must end in `/v2`
 [bga]: https://github.com/Smiduweorc/black-garden-ants#readme
 [cc]: https://www.conventionalcommits.org
 [ccl]: https://github.com/conventionalcommit/commitlint
+
+> I can trust go to never put me in a postion where I have to do `--no-verify`, which is why there is a dedicated action that checks commits as well.
