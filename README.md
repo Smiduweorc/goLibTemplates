@@ -39,12 +39,17 @@ hooks and CI call too.
 
 ## Documentation
 
-pkg.go.dev renders the package from the module proxy; nothing is hosted here.
+pkg.go.dev renders the package from the module proxy.
 Doc comments on every exported identifier and `Example*` functions in
 `example_test.go` are what appears there. On a pull request the Docs
 workflow checks the page renders; on a `v*` tag it asks proxy.golang.org for
 the new version so pkg.go.dev indexes it straight away. Push the tag with
 `PUSH=1 make release V=…` or `git push origin <tag>`.
+
+Every push to `master` also mirrors the pkgsite rendering to GitHub Pages
+(`https://<owner>.github.io/<repo>/`), so docs for unreleased or private code
+are readable too. Enable it once under **Settings → Pages → Source: GitHub
+Actions**.
 
 ## Releases
 
